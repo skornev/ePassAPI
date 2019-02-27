@@ -47,7 +47,7 @@ class Api
         }
         // check mandatory fields
         foreach ($allowedParameters as $key => $allowedParameter) {
-            if (!isset($parameter[$key])) {
+            if (!isset($parameters[$key])) {
                 throw  new  MandatoryParameterException(sprintf("Parameter %s is not set", $key));
             }
         }
