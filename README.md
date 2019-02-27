@@ -26,7 +26,7 @@ try {
 }
 
 ```
-###Returns Product information based on a search of the element14 / Newark element14 / Farnell element14 order code
+### Returns Product information based on a search of the element14 / Newark element14 / Farnell element14 order code
 
 ```
 use Kapustko\Element14\EPassRest\Api;
@@ -47,7 +47,7 @@ try {
     echo $e->getMessage();
 }
 ```
-###Returns Product information based on a search of the manufacturer part number
+### Returns Product information based on a search of the manufacturer part number
 
 ```
 use Kapustko\Element14\EPassRest\Api;
