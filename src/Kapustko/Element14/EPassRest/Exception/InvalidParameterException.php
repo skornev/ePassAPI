@@ -5,7 +5,9 @@
  * Time: 00:18
  */
 
-class InvalidParameterException extends \Exception
+namespace  Kapustko\Element14\EPassRest\Exception;
+
+class InvalidParameterException extends RestApiException
 {
 
 }

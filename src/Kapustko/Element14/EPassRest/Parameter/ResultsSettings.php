@@ -5,14 +5,55 @@
  * Time: 23:41
  */
 
-class ResultsSettings
+namespace Kapustko\Element14\EPassRest\Parameter;
+
+
+use Kapustko\Element14\EPassRest\Exception\InvalidParameterException;
+
+class ResultsSettings extends AbstractParameter
 {
 
-    private $offset;
 
-    private $numberOfResults;
+    public function __construct()
+    {
+    }
 
-//resultsSettings.refinements.filters
+    /**
+     * @param int $offset
+     */
+    public function validateOffset($offset)
+    {
+    }
 
-    private $responseGroup;
+    /**
+     * @param int $numberOfResults
+     */
+    public function validateNumberOfResults($numberOfResults)
+    {
+    }
+
+    /**
+     * @param Refinements $refinements
+     */
+    public function validateRefinements($refinements)
+    {
+    }
+
+
+    /**
+     * @param $responseGroup
+     * @throws InvalidParameterException
+     */
+    public function validateResponseGroup($responseGroup)
+    {
+        $responseGroups = ['small', 'medium', 'large', 'prices', 'inventory', 'none'];
+
+        if (!in_array($responseGroup, $responseGroups)) {
+            throw  new InvalidParameterException(sprintf("'%s' is not a valid response group, allowed are %s", $responseGroup, implode(",", $responseGroups)));
+
+        }
+
+    }
+
+
 }

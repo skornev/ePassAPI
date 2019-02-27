@@ -5,20 +5,27 @@
  * Time: 23:50
  */
 
+namespace Kapustko\Element14\EPassRest\Parameter;
+
+
+use Kapustko\Element14\EPassRest\Exception\InvalidParameterException;
+
 class StoreInfo
 {
-    /**
-     * Store identifier
-     * @var string
-     */
-    private $id;
 
     /**
      * StoreInfo constructor.
-     * @param string $storeId
+     */
+    public function __construct()
+    {
+
+    }
+
+    /**
+     * @param $id
      * @throws InvalidParameterException
      */
-    public function __construct($storeId = 'uk.farnell.com')
+    public function validateId($id)
     {
         $storeIds = [
             'bg.farnell.com',
@@ -69,9 +76,12 @@ class StoreInfo
             'kr.element14.com'
         ];
 
-        if (!in_array($storeId, $storeIds)) {
-            throw new InvalidParameterException("''" . $storeId . "' is not a valid store id ");
+        if (!in_array($id, $storeIds)) {
+            throw new InvalidParameterException(sprintf("'%s' is not a valid store id, , allowed are %s", $id, implode(",",$storeIds )));
         }
-
     }
+
+
+
+
 }

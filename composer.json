@@ -1,0 +1,16 @@
+{
+  "name": "skornev/e-pass-api",
+  "description": "Access Farnell Element 14 products information using Farnell Element 14 ePassAPI",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Skornev",
+      "homepage": "https://github.com/skornev"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Kapustko\\Element14\\EPassRest\\": "src/Kapustko/Element14/EPassRest/"
+    }
+  }
+}
