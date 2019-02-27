@@ -49,7 +49,7 @@ class ResultsSettings extends AbstractParameter
         $responseGroups = ['small', 'medium', 'large', 'prices', 'inventory', 'none'];
 
         if (!in_array($responseGroup, $responseGroups)) {
-            throw  new InvalidParameterException(sprintf("'%s' is not a valid response group, allowed are %s", $responseGroup, implode(",", $responseGroups)));
+            throw  new InvalidParameterException(sprintf("'%s' is not a valid response group, allowed values are %s", $responseGroup, implode(",", $responseGroups)));
 
         }
 

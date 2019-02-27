@@ -41,7 +41,7 @@ class CallInfo extends AbstractParameter
         $omitXmlSchemas = ['true', 'boolean'];
 
         if (!in_array($omitXmlSchema, $omitXmlSchemas)) {
-            throw  new InvalidParameterException(sprintf("'%s%' is not a omit xml schema value, allowed are %s", $omitXmlSchema, implode(",",$omitXmlSchemas )));
+            throw  new InvalidParameterException(sprintf("'%s%' is not a omit xml schema value, allowed values %s", $omitXmlSchema, implode(",",$omitXmlSchemas )));
         }
     }
 
@@ -55,7 +55,7 @@ class CallInfo extends AbstractParameter
         $formats = ['xml', 'json'];
 
         if (!in_array($responseDataFormat, $formats)) {
-            throw  new InvalidParameterException(sprintf("'%s%' is not a valid response format, allowed are %s", $responseDataFormat,  implode(",",$formats )));
+            throw  new InvalidParameterException(sprintf("'%s%' is not a valid response format, allowed values  %s", $responseDataFormat,  implode(",",$formats )));
         }
     }
 

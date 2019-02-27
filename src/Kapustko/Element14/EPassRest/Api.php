@@ -14,8 +14,8 @@ class Api
 {
 
     /**
-     * Returns Product information based on a search by keyword
      * @param $parameters
+     * @return bool|string
      * @throws MandatoryParameterException
      * @throws UnknownParameterException
      */
@@ -47,16 +47,18 @@ class Api
         }
         // check mandatory fields
         foreach ($allowedParameters as $key => $allowedParameter) {
-            if (!isset($parameters[$key])) {
-                throw  new  MandatoryParameterException(sprintf("Parameter %s is not set", $key));
+            if ($allowedParameters[$key] && !isset($parameters[$key])) {
+                throw  new  MandatoryParameterException(sprintf("Mandatory parameter %s is not set", $key));
             }
         }
 
         // build uri for a REST request
-        UriBuilder::buildUri($parameters);
+        $uri = UriBuilder::buildUri($parameters);
 
-        //        new Guzzle();
+        // get xml|json data
+        $data = file_get_contents($uri);
 
+        return $data;
     }
 
 }

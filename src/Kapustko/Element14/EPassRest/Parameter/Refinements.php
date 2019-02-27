@@ -27,7 +27,7 @@ class Refinements
     {
         $filters =  ['rohsCompliant', 'inStock', 'rohsCompliant,inStock'];
         if (!in_array($filter, $filters)) {
-            throw new InvalidParameterException(sprintf("'%s' is not a valid filter, , allowed are %s", $filter, implode(",",$filters )));
+            throw new InvalidParameterException(sprintf("'%s' is not a valid filter, allowed values are %s", $filter, implode(",",$filters )));
         }
     }
 

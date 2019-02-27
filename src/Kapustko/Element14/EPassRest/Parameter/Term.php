@@ -22,7 +22,7 @@ class Term extends AbstractParameter
         $allowedPrefixes = ['any', 'id', 'manuPartNum'];
         $termSlugs = explode(':', $term);
         if (!in_array($termSlugs[0], $allowedPrefixes)) {
-            throw new InvalidParameterException(sprintf("'%s' is not allowed prefix, allowed are %s", $termSlugs[0], implode(",",$allowedPrefixes )));
+            throw new InvalidParameterException(sprintf("'%s' is not allowed prefix, allowed values are %s", $termSlugs[0], implode(",",$allowedPrefixes )));
 
         }
     }

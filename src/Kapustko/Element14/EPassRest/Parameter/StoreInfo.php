@@ -77,7 +77,7 @@ class StoreInfo
         ];
 
         if (!in_array($id, $storeIds)) {
-            throw new InvalidParameterException(sprintf("'%s' is not a valid store id, , allowed are %s", $id, implode(",",$storeIds )));
+            throw new InvalidParameterException(sprintf("'%s' is not a valid store id, allowed values are %s", $id, implode(",",$storeIds )));
         }
     }
 
