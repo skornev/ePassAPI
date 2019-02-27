@@ -18,14 +18,16 @@ class UriBuilder
         foreach ($parameters as $parameter => $value) {
             $classParameters = explode('.', $parameter);
 
-            $class = '\Kapustko\Element14\EPassRest\Parameter\\';
-            foreach ($classParameters as $index => $classParameter) {
-                if ($index + 1 != count($classParameters) || count($classParameters) == 1) {
-                    $class .= ucfirst($classParameters[0]);
+            $class = '\Kapustko\Element14\EPassRest\Parameter';
 
-
-                }
+            if (count($classParameters) == 1) {
+                $class .= '\\' . ucfirst($classParameters[0]);
+            } else {
+                // get before last
+                end($classParameters);
+                $class .= '\\' . ucfirst(prev($classParameters));
             }
+
 
             if (count($classParameters) > 1) {
                 $parameterObject = new $class();
