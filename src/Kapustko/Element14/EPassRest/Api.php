@@ -42,13 +42,13 @@ class Api
         // check if parameters has a valid name and value
         foreach ($parameters as $key => $parameter) {
             if (!isset($allowedParameters[$key])) {
-                throw  new UnknownParameterException(sprintf("Unknown parameter s%", $key));
+                throw  new UnknownParameterException(sprintf("Unknown parameter %s", $key));
             }
         }
         // check mandatory fields
         foreach ($allowedParameters as $key => $allowedParameter) {
             if (!isset($parameter[$key])) {
-                throw  new  MandatoryParameterException(sprintf("Parameter s% is not set", $key));
+                throw  new  MandatoryParameterException(sprintf("Parameter %s is not set", $key));
             }
         }
 

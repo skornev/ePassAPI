@@ -10,7 +10,7 @@
 use Kapustko\Element14\EPassRest\Api;
 
 $parameters = [
-    'callInfo.apiKey'=>'manuPartNum:LM339ADT',
+    'callInfo.apiKey'=>'',
     'term'=>'any:fuse',
     'storeInfo.id' => 'manuPartNum:LM339ADT',
     'resultsSettings.offset' => 0,
