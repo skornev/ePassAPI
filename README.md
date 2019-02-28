@@ -4,7 +4,7 @@
 
 ### Returns Product information based on a search by keyword
 
-```
+```php
 <?php 
 
 use Kapustko\Element14\EPassRest\Api;
@@ -30,7 +30,7 @@ try {
 ```
 ### Returns Product information based on a search of the element14 / Newark element14 / Farnell element14 order code
 
-```
+```php
 <?php
 
 use Kapustko\Element14\EPassRest\Api;
@@ -53,7 +53,7 @@ try {
 ```
 ### Returns Product information based on a search of the manufacturer part number
 
-```
+```php
 <?php
 
 use Kapustko\Element14\EPassRest\Api;
