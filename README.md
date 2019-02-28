@@ -5,6 +5,8 @@
 ### Returns Product information based on a search by keyword
 
 ```
+<?php 
+
 use Kapustko\Element14\EPassRest\Api;
 use Kapustko\Element14\EPassRest\Exception\RestApiException;
 
@@ -29,6 +31,8 @@ try {
 ### Returns Product information based on a search of the element14 / Newark element14 / Farnell element14 order code
 
 ```
+<?php
+
 use Kapustko\Element14\EPassRest\Api;
 use Kapustko\Element14\EPassRest\Exception\RestApiException;
 
@@ -50,6 +54,8 @@ try {
 ### Returns Product information based on a search of the manufacturer part number
 
 ```
+<?php
+
 use Kapustko\Element14\EPassRest\Api;
 use Kapustko\Element14\EPassRest\Exception\RestApiException;
 
