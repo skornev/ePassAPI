@@ -8,6 +8,10 @@
       "homepage": "https://github.com/skornev"
     }
   ],
+  "require": {
+    "php": "^5.4",
+    "guzzlehttp/guzzle": "^5.3"
+  },
   "autoload": {
     "psr-4": {
       "Kapustko\\Element14\\EPassRest\\": "src/Kapustko/Element14/EPassRest/"

@@ -4,6 +4,9 @@ namespace Kapustko\Element14\EPassRest;
 
 use Kapustko\Element14\EPassRest\Exception\MandatoryParameterException;
 use Kapustko\Element14\EPassRest\Exception\UnknownParameterException;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
+
 
 /**
  * User: skornev
@@ -18,6 +21,7 @@ class Api
      * @return bool|string
      * @throws MandatoryParameterException
      * @throws UnknownParameterException
+     * @throws ClientException
      */
     public static function searchByKeyword($parameters)
     {
@@ -56,7 +60,9 @@ class Api
         $uri = UriBuilder::buildUri($parameters);
 
         // get xml|json data
-        $data = file_get_contents($uri);
+        $client = new Client();
+        $data = $client->get($uri)->getBody();
+
 
         return $data;
     }
