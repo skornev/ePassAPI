@@ -57,7 +57,7 @@ class UserInfo
     {
 
         if (empty($customerId) || !filter_var($customerId, FILTER_VALIDATE_INT)) {
-            throw  new InvalidParameterException(sprintf("'%s%' is not a omit xml schema value, should be a number", $customerId));
+            throw  new InvalidParameterException(sprintf("'%s%' is not a valid customer id, should be a number", $customerId));
         }
     }
 }
