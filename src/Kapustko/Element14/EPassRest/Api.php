@@ -40,7 +40,10 @@ class Api
             'callInfo.apiKey' => true,
             'callInfo.omitXmlSchema' => false,
             'callInfo.responseDataFormat' => false,
-            'callInfo.callback' => false
+            'callInfo.callback' => false,
+            'userInfo.signature' => false,
+            'userInfo.timestamp' => false,
+            'userInfo.customerId' => false
         ];
 
         // check if parameters has a valid name and value
