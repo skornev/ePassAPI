@@ -33,6 +33,7 @@ class Api
         $allowedParameters = [
             'term' => true,
             'storeInfo.id' => true,
+            'versionNumber' => false,
             'resultsSettings.offset' => true,
             'resultsSettings.numberOfResults' => true,
             'resultsSettings.responseGroup' => false,
