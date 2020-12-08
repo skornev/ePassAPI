@@ -27,6 +27,24 @@ class Api
     {
 
 
+
+        // get xml|json data
+        $client = new Client();
+        $uri = Api::buildUri($parameters);
+        $data = $client->get($uri)->getBody();
+
+        return $data;
+    }
+
+    /**
+     * @param $parameters
+     * @return string
+     * @throws MandatoryParameterException
+     * @throws UnknownParameterException
+     */
+    public static function buildUri($parameters)
+    {
+
         /**
          * True - mandatory, false - optional
          */
@@ -63,12 +81,6 @@ class Api
         // build uri for a REST request
         $uri = UriBuilder::buildUri($parameters);
 
-        // get xml|json data
-        $client = new Client();
-        $data = $client->get($uri)->getBody();
-
-
-        return $data;
+        return $uri;
     }
-
 }
