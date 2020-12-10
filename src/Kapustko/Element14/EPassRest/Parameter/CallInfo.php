@@ -27,6 +27,9 @@ class CallInfo extends AbstractParameter
      */
     public function validateApiKey($apiKey)
     {
+        if (empty($apiKey)) {
+            throw  new InvalidParameterException(sprintf("ApiKey is empty"));
+        }
         if (strlen($apiKey) != 24) {
             throw  new InvalidParameterException(sprintf("'%s%' is not a valid api key should be 24 length", $apiKey));
         }
