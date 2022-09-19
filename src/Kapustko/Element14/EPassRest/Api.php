@@ -18,12 +18,13 @@ class Api
 
     /**
      * @param $parameters
+     * @param $options array
      * @return bool|string
      * @throws MandatoryParameterException
      * @throws UnknownParameterException
      * @throws ClientException
      */
-    public static function searchByKeyword($parameters)
+    public static function searchByKeyword($parameters, $options=[])
     {
 
 
@@ -31,7 +32,7 @@ class Api
         // get xml|json data
         $client = new Client();
         $uri = Api::buildUri($parameters);
-        $data = $client->get($uri)->getBody();
+        $data = $client->get($uri, $options)->getBody();
 
         return $data;
     }
